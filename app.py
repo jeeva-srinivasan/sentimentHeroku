@@ -17,7 +17,7 @@ def home():
         if user_id not in recc_df.index:
             return render_template('base.html') + 'THE USER ID IS NOT AVILABLE IN DATASET PLEASE USE VALID USER ID'
         else:  
-            result_df=predict_sentiment(user_id,recc_df)
+            result_df=predict(user_id,recc_df)
             return render_template('home.html',predict=result_df.head(5),user=user_id) 
             
     else:
