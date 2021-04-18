@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+    <h2>Recommendations for {{user}} are : </h2>
+    
+    
+        <table align="center" >
+            <tr>
+                <th>Products</th>
+            </tr>
+            {% for index,pro in predict.iterrows() %}
+            <tr >
+                <td>{{index}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    
+    
+
+{% endblock %}

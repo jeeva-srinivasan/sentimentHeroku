@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/mystyle.css') }}">
+        <title>Product suggestions</title>
+    </head>
+
+    <body align="center" style="background-color:paleturquoise;">
+        <h2>Sentiment Based Product Recommendation System.</h2>
+        <div>
+            <form method='post' action='/'>
+                <label for="fname">Enter User name for recommendations :</label>
+                <input type="text" id="fname" name="userName">  
+                <input type="Submit" value="Predict">
+            </form>
+        </div>
+        {% block body %}{% endblock %}
+    </body>
+</html>
