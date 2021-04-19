@@ -13,9 +13,9 @@ def home():
         user_name = request.form.get("userName")
         user_name=user_name.lower().strip()
         if len(user_name)==0:
-            return render_template('base.html') + 'PLEASE ENTER USER ID'
+            return render_template('base.html') + 'Please enter a user name'
         if user_name not in recom_df.index:
-            return render_template('base.html') + 'THE USER ID IS NOT AVILABLE IN DATASET PLEASE USE VALID USER ID'
+            return render_template('base.html') + 'Please enter a valid user name'
         else:  
             result_df=predict(user_name,recom_df)
             return render_template('home.html',predict=result_df.head(5),user=user_name) 
